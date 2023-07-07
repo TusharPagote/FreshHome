@@ -17,7 +17,7 @@ class BigText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      text + ":",
+      text,
       style: TextStyle(
           color: color,
           fontFamily: 'Roboto',

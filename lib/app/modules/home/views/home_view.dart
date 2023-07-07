@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:freshhome/app/modules/listwidget/views/listwidget_view.dart';
 
 import 'package:get/get.dart';
 
+import '../../catalog_product/views/catalog_product_view.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -33,6 +33,77 @@ class HomeView extends GetView<HomeController> {
       backgroundColor: const Color.fromRGBO(245, 245, 245, 1),
       body: CustomScrollView(
         slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.green,
+            pinned: true,
+            floating: true,
+            expandedHeight: 150,
+            collapsedHeight: 80,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              
+              title: Flexible(
+                child: Container(
+                  margin: EdgeInsets.only( left: 8, right: 8),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: Colors.white),
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                        size: 15,
+                      ),
+                      // TextField(),
+                      Text(
+                        "Type product name to search",
+                        style: TextStyle(color: Colors.grey, fontSize: 10),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              background: const Padding(
+                padding: EdgeInsets.all(20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.location_on_outlined,
+                          color: Colors.white,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "440017",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            Text(
+                              "Nagpur",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    Icon(
+                      Icons.food_bank_outlined,
+                      color: Colors.white,
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
           SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
@@ -49,18 +120,18 @@ class HomeView extends GetView<HomeController> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 Icons.location_on_outlined,
                                 color: Colors.white,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
+                                children: [
                                   Text(
                                     "440017",
                                     style: TextStyle(color: Colors.white),
@@ -74,7 +145,7 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ],
                           ),
-                          const Icon(
+                          Icon(
                             Icons.food_bank_outlined,
                             color: Colors.white,
                           )
@@ -91,8 +162,8 @@ class HomeView extends GetView<HomeController> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: Colors.white),
-                              child: Row(
-                                children: const [
+                              child: const Row(
+                                children: [
                                   Icon(
                                     Icons.search,
                                     color: Colors.grey,
@@ -113,7 +184,8 @@ class HomeView extends GetView<HomeController> {
 
                 // LISTVIEW
                 SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: Column(
                     children: [
                       Container(
@@ -157,9 +229,8 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
 
-                ListwidgetView(text: "Flash sales"),
-                ListwidgetView(text: 'Trending Products'),
-                
+                CatalogProductView(text: "Flash sales"),
+                CatalogProductView(text: 'Trending Products'),
               ],
             ),
           )
@@ -289,8 +360,8 @@ class HomeView extends GetView<HomeController> {
       //         ),
       //       ),
 
-      //       ListwidgetView(text: "Flash sales"),
-      //       ListwidgetView(text: 'Trending Products'),
+      //       CatalogProductView(text: "Flash sales"),
+      //       CatalogProductView(text: 'Trending Products'),
       //       // list of categories
 
       //       // Expanded(child: CategoryView())

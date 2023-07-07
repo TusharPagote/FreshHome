@@ -4,6 +4,8 @@ import '../modules/account/bindings/account_binding.dart';
 import '../modules/account/views/account_view.dart';
 import '../modules/cart/bindings/cart_binding.dart';
 import '../modules/cart/views/cart_view.dart';
+import '../modules/catalog_product/bindings/catalog_product_binding.dart';
+import '../modules/catalog_product/views/catalog_product_view.dart';
 import '../modules/category/bindings/category_binding.dart';
 import '../modules/category/views/category_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
@@ -12,8 +14,6 @@ import '../modules/favorites/bindings/favorites_binding.dart';
 import '../modules/favorites/views/favorites_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/listwidget/bindings/listwidget_binding.dart';
-import '../modules/listwidget/views/listwidget_view.dart';
 import '../modules/product_detail/bindings/product_detail_binding.dart';
 import '../modules/product_detail/views/product_detail_view.dart';
 import '../modules/splashscreen/bindings/splashscreen_binding.dart';
@@ -38,11 +38,6 @@ class AppPages {
       binding: SplashscreenBinding(),
     ),
     GetPage(
-      name: _Paths.LISTWIDGET,
-      page: () => ListwidgetView(text: ''),
-      binding: ListwidgetBinding(),
-    ),
-    GetPage(
       name: _Paths.CATEGORY,
       page: () => CategoryView(),
       binding: CategoryBinding(),
@@ -59,7 +54,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CART,
-      page: () => const CartView(),
+      page: () => CartView(),
       binding: CartBinding(),
     ),
     GetPage(
@@ -71,6 +66,11 @@ class AppPages {
       name: _Paths.PRODUCT_DETAIL,
       page: () => const ProductDetailView(),
       binding: ProductDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.CATALOG_PRODUCT,
+      page: () => CatalogProductView(text: ''),
+      binding: CatalogProductBinding(),
     ),
   ];
 }

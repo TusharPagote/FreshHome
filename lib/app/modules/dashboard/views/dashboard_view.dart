@@ -21,10 +21,10 @@ class DashboardView extends StatelessWidget {
               index: controller.tabIndex,
               children: [
                 HomeView(),
-                FavoritesView(),
+                const FavoritesView(),
                 CategoryView(),
                 CartView(),
-                AccountView()
+                const AccountView()
               ],
             ),
           ),
@@ -38,7 +38,7 @@ class DashboardView extends StatelessWidget {
               _bottomNavigationBarItem(icon: Icons.favorite, label: "Favorite"),
               _bottomNavigationBarItem(
                   icon: Icons.category_outlined, label: "Category"),
-              _bottomNavigationBarItem(icon: Icons.shopping_bag, label: "Home"),
+              _bottomNavigationBarItem(icon: Icons.shopping_bag, label: "Cart"),
               _bottomNavigationBarItem(
                   icon: Icons.account_box, label: "Account"),
             ],
